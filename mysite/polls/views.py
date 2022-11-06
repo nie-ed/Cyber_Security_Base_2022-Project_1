@@ -75,6 +75,9 @@ def createnew(request):
 
 
 #FIX Identification and Authentication Failures:
+#The following is code integrating validator to the views.py file. The code is copied from the website:
+#https://docs.djangoproject.com/en/2.0/_modules/django/contrib/auth/password_validation/
+
 #name = request.POST.get('username')
 #pw = request.POST.get('password')
 #validate_password(pw)
