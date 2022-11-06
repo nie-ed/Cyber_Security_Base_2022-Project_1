@@ -9,6 +9,10 @@ class NewUsers(models.Model):
     password = models.TextField()
     id = models.BigAutoField(primary_key=True)
 
+# FIX Cryptographic Failures:
+#    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
 class Texts(models.Model):
     owner = models.ForeignKey(NewUsers, on_delete=models.CASCADE)
     content = models.CharField(max_length=200)
