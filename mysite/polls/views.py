@@ -8,7 +8,6 @@ from datetime import timedelta
 
 
 #FIX Identification and Authentication Failures:
-
 #import functools
 #from django.conf import settings
 #from django.core.exceptions import (
@@ -16,14 +15,11 @@ from datetime import timedelta
 #)
 #from django.utils.module_loading import import_string
 #from django.utils.translation import gettext as _, ngettext
-#
+
 
 
 #FIX CSRF protection:
-
 #from django.views.decorators.csrf import csrf_protect
-
-
 
 
 
@@ -32,7 +28,6 @@ def index(request):
     return HttpResponseRedirect(reverse('polls:detail', args=(user.id,)))
 
 #FIX Broken Access Control:
-
 #if (request.user):
 #    return HttpResponseRedirect(reverse('polls:detail', args=(request.user.id,)))
 #else:
@@ -45,7 +40,6 @@ def detail(request, user_id):
 
     try:
 # FIX Insecure Desing:
-
 #        texts = user.texts_set.filter(pub_date__lte=timezone.now())
 #        texts = user.texts_set.filter(pub_date__gte=timezone.now() - timedelta(5))
 
@@ -57,15 +51,9 @@ def detail(request, user_id):
     except (KeyError, Texts.DoesNotExist):
         return render(request, 'polls/detail.html', {'user': user})
     
-    return render(request, 'polls/detail.html', {'user': user, 'texts': texts})
-
-
-    
-
-
+    return render(request, 'polls/detail.html', {'user': user, 'texts': texts}) 
 
 #FIX Broken Access Control:
-
 #if (request.user):
 #   return render(request, 'polls/detail.html', {'user': request.user})
 #else:
@@ -82,15 +70,11 @@ def createnew(request):
     return redirect('/')
 
 #FIX Cryptographic Failures:
-
 #new = User.objects.create_user(username=name, password=pw)
 
 
 
-
-
 #FIX Identification and Authentication Failures:
-
 #name = request.POST.get('username')
 #pw = request.POST.get('password')
 #validate_password(pw)
