@@ -1,0 +1,21 @@
+<h1>Welcome <u>{{user.username}}</u></h1>
+<h2> Your own webpage </h2>
+
+<br>
+<h3>Your Texts:</h3>
+
+{% if texts %}
+    {% for text in texts %}
+   <p>     {{ text.content}}</p>
+    {% endfor %}
+{% endif %}
+
+<br>
+<h3>Add Text</h3>
+<form action="{% url 'polls:add'%}" method="post">
+    {% csrf_token %}
+    <input type="text" name="text">
+    <input type="hidden" value="{{user.id}}" name="user_id">
+    <input type="submit" value="Add">
+</form>
+

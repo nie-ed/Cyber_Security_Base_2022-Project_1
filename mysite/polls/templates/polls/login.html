@@ -1,0 +1,31 @@
+<div>
+  <h1>Login</h1>
+
+<form action='polls/' method="POST"> 
+<!--   {% csrf_token %} -->   
+  <h2>Password</h2>
+  <input type="text" placeholder="Enter Password" name="password"/>
+
+  <h2>Username</h2>
+  <input type="text" placeholder="Enter Username" name="username"/>
+
+    <button type="submit">Submit</button> 
+</form>
+ <br>
+ <br>
+
+
+  <h1>Create user</h1>
+
+<form action='polls/newuser/' method="POST"> 
+<!-- {% csrf_token %} -->   
+<h2>Password</h2>
+  <input type="text" placeholder="Enter Password" name="password"/>
+
+  <h2>Username</h2>
+  <input type="text" placeholder="Enter Username" name="username"/>
+
+    <button type="submit">Submit</button> 
+</form>
+
+</div>
